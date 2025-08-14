@@ -1,4 +1,5 @@
-# OpenPLC Security+
+<img src="https://drive.google.com/uc?export=view&id=1G06-sGyJqzhCNPKBBABCegoxGMRxNYOy" alt="OpenPLC Security+" width="300" height="300" >
+
 
 **OpenPLC Security+** is a hardened version of the traditional OpenPLC setup with added security layers to protect against common threats.
 
@@ -9,10 +10,7 @@
 - **DDoS Mitigation**: Filters and drops ~99% of malicious packets within hardware capability limits.
 - **Hardened Configuration**: Secure-by-default settings to minimize attack surface.
 
-This Framework aims to provide a safer OpenPLC environment without sacrificing usability.
-
-## Firewall Overview
-The **OpenPLC Security+ firewall** is implemented with an advanced `iptables` configuration providing:
+This framework aims to provide a safer OpenPLC environment without sacrificing usability.
 
 - **Strict Default-Deny Policy**: All inbound traffic blocked unless explicitly allowed.
 - **Loopback & Established Connection Allowlist**: Ensures essential internal communications.
