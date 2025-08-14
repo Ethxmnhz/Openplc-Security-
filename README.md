@@ -74,3 +74,78 @@ The firewall configuration is implemented in **`firewallfinal.sh`**.
 
 ```bash
 sudo ./firewallfinal.sh
+
+
+
+## SSL & HTTPS Integration
+To secure the OpenPLC web interface, **OpenPLC Security+** uses Nginx with a self-signed SSL certificate, ensuring all logins and data exchanges are encrypted.
+
+### 1️⃣ Create a Self-Signed SSL Certificate
+```bash
+sudo mkdir -p /etc/ssl/private
+sudo openssl req -x509 -nodes -days 365   -newkey rsa:2048   -keyout /etc/ssl/private/openplc-selfsigned.key   -out /etc/ssl/certs/openplc-selfsigned.crt
+```
+- **Common Name (CN)** → Enter your server IP, e.g. `10.254.46.241`.
+- Other fields can be left blank or filled as needed.
+
+---
+
+### 2️⃣ Configure Nginx for HTTPS & Redirect
+Create a new config file:
+```bash
+sudo nano /etc/nginx/sites-available/openplc
+```
+
+Paste:
+```nginx
+server {
+    listen 80;
+    server_name 10.254.46.241;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name 10.254.46.241;
+
+    ssl_certificate /etc/ssl/certs/openplc-selfsigned.crt;
+    ssl_certificate_key /etc/ssl/private/openplc-selfsigned.key;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+---
+
+### 3️⃣ Enable the Site & Restart Nginx
+```bash
+sudo ln -s /etc/nginx/sites-available/openplc /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+---
+
+### 4️⃣ Allow HTTPS & HTTP in Firewall
+```bash
+sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+*(Optional: Save rules using `netfilter-persistent` for reboot persistence)*
+
+---
+
+### 5️⃣ Access the OpenPLC Web UI
+- Go to: **`https://10.254.46.241`**
+- Accept browser warning (self-signed cert).
+- All traffic is now encrypted and proxied to the local OpenPLC server.
+
+---
+
+**With the combined SSL setup and advanced firewall rules, OpenPLC Security+ provides end-to-end protection — from encrypted access to packet-level filtering.**
