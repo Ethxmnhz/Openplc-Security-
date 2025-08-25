@@ -1,0 +1,31 @@
+.resource-cards {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0 1rem 0;
+}
+.resource-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(30,60,90,0.07);
+  background: #fff;
+  min-width: 180px;
+  min-height: 110px;
+  font-size: 1.1rem;
+  position: relative;
+}
+.resource-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.resource-label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.resource-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}

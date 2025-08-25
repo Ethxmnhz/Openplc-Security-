@@ -1,0 +1,189 @@
+.log-viewer {
+  background: linear-gradient(135deg, #f6f8fa 60%, #e3f0ff 100%);
+  color: #222;
+  height: 100%;
+  padding: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #1976d233, 0 1.5px 8px #0001;
+  backdrop-filter: blur(2px);
+}
+.log-summary {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+.log-summary-cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+.log-summary-card {
+  padding: 1.2rem 2.2rem;
+  border-radius: 18px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 140px;
+  text-align: center;
+  box-shadow: 0 4px 24px #1976d233, 0 2px 12px #0001;
+  background: linear-gradient(135deg, #fff 60%, #e3f0ff 100%);
+  color: #1976d2;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.18s, border 0.18s, transform 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.log-summary-card:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #1976d2 0%, #ffb300 100%);
+  opacity: 0.07;
+  z-index: 0;
+}
+.log-summary-card:hover {
+  box-shadow: 0 8px 32px #1976d244;
+  transform: translateY(-2px) scale(1.03);
+}
+.log-summary-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  z-index: 1;
+}
+.log-summary-count {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+  z-index: 1;
+}
+.log-list {
+  font-family: 'JetBrains Mono', 'Fira Mono', 'monospace';
+  font-size: 1.05rem;
+  max-height: 65vh;
+  overflow-y: auto;
+  flex: 1;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  background: #f6f8fa;
+}
+
+.bruteforce-ip-cards {
+  display: flex;
+  gap: 1.2rem;
+  margin: 0 0 1.5rem 1.5rem;
+  flex-wrap: wrap;
+}
+.bruteforce-ip-card {
+  background: linear-gradient(120deg, #ff5252 60%, #ffb300 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 1.2rem 1.7rem;
+  min-width: 220px;
+  box-shadow: 0 4px 24px #ff525244;
+  font-size: 1.12rem;
+  font-weight: 700;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: relative;
+  overflow: hidden;
+}
+.bruteforce-ip-card:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #fff 0%, #ffb300 100%);
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.log-line-card {
+  white-space: pre-wrap;
+  border-radius: 18px;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.7rem;
+  background: linear-gradient(120deg, #fff 60%, #e3f0ff 100%);
+  box-shadow: 0 4px 24px #1976d233, 0 2px 12px #0001;
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  font-size: 1.09rem;
+  transition: box-shadow 0.18s, transform 0.18s;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.log-line-card:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #1976d2 0%, #ffb300 100%);
+  opacity: 0.07;
+  z-index: 0;
+}
+.log-line-card.bruteforce {
+  border-left: 8px solid #ff5252;
+  background: linear-gradient(120deg, #fff 60%, #ffebee 100%);
+}
+.log-line-card.undervoltage {
+  border-left: 8px solid #ffb300;
+  background: linear-gradient(120deg, #fff 60%, #fff8e1 100%);
+}
+.log-line-card.voltage {
+  border-left: 8px solid #4caf50;
+  background: linear-gradient(120deg, #fff 60%, #e8f5e9 100%);
+}
+.log-line-card.login {
+  border-left: 8px solid #1976d2;
+  background: linear-gradient(120deg, #fff 60%, #e3f2fd 100%);
+}
+.log-line-label {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 0.1rem;
+  z-index: 1;
+}
+.log-line-ip {
+  font-size: 1.01rem;
+  color: #ff5252;
+  margin-left: 0.5rem;
+  z-index: 1;
+}
+.log-line-text {
+  font-size: 1.05rem;
+  color: #222;
+  word-break: break-word;
+  z-index: 1;
+}
+.log-viewer {
+  background: #181818;
+  color: #e0e0e0;
+  height: 100%;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.log-list {
+  font-family: monospace;
+  font-size: 1rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.log-line {
+  white-space: pre-wrap;
+  border-bottom: 1px solid #222;
+  padding: 2px 0;
+}

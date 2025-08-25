@@ -1,0 +1,30 @@
+.navbar-modern {
+  height: 64px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px 0 rgba(30,60,90,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1976d2;
+  letter-spacing: 1px;
+}
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+.navbar-avatar {
+  font-size: 1.7rem;
+  background: #e3f0ff;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
+  color: #1976d2;
+  margin-left: 1rem;
+}

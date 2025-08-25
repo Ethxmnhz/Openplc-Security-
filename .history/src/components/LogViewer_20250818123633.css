@@ -1,0 +1,20 @@
+.log-viewer {
+  background: #181818;
+  color: #e0e0e0;
+  height: 100%;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.log-list {
+  font-family: monospace;
+  font-size: 1rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.log-line {
+  white-space: pre-wrap;
+  border-bottom: 1px solid #222;
+  padding: 2px 0;
+}

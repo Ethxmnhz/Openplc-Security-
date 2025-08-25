@@ -1,0 +1,35 @@
+.event-status-cards {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.event-status-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 rgba(30,60,90,0.06);
+  background: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+}
+.event-status-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+.event-status-label {
+  flex: 1;
+}
+.event-status-detected {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 8px;
+  margin-left: 1rem;
+  background: #0002;
+}

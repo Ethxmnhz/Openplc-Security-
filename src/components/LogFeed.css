@@ -1,0 +1,53 @@
+.log-feed {
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(30,60,90,0.07);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  min-height: 320px;
+  max-height: 420px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.log-feed-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 1rem;
+}
+.log-feed-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 400px;
+  min-height: 200px;
+}
+.log-feed-line {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  background: #f7faff;
+  font-size: 1.05rem;
+  transition: background 0.2s;
+}
+.log-feed-line.bruteforce {
+  background: #fff0f0;
+}
+.log-feed-line.undervoltage {
+  background: #fffbe6;
+}
+.log-feed-label {
+  font-weight: 700;
+  margin-right: 0.7rem;
+}
+.log-feed-ip {
+  font-size: 0.95rem;
+  color: #888;
+  margin-right: 0.7rem;
+}
+.log-feed-text {
+  flex: 1;
+  margin-left: 0.5rem;
+}
